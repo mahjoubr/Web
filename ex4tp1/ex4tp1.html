@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <style>
+                body{
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 60px;
+                    background-color: #f5f5f5;
+                    text-align: center;
+                }
+                h1{
+                    font-size: xx-large;
+                    padding: 60 px;
+                    text-align: center;
+                    
+                }
+                li,ol{
+                    font-size: large;
+                    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+                    text-align: center;
+                }
+            </style>
+            <h1>Changement Couleur:</h1>
+        </head>
+        <body>
+            
+            <ol id="list">
+                <li>Click on me</li>
+                <li>Click on me</li>
+                <li>Click on me</li>
+                <li>Click on me</li>
+            </ol>
+            <script>
+                let el=document.getElementById("list");
+                el.addEventListener("click",function(e){
+                    e.target.style.color="#"+Math.floor(Math.random() * 1000);
+                });
+            </script>
+        </body>
+</html>

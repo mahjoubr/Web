@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>  
+
+
+    <title> Mini Word Editor</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7e1b9; 
+    margin: 0;
+    padding: 0;
+}
+
+#styl {
+    background-color: #cccfcc; 
+    padding: 100px;
+}
+/*color: #304a1b;*/
+h1 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 70px;
+    color: #090054;
+    text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9; 
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#txt {
+    width: calc(105% - 17.5px);
+    height: 300px;
+    padding: 10px;
+    border: 7px solid  #104b08 ; 
+    border-radius: 5px;
+    background-color: #f6f6f6;
+    resize: vertical;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="number"],
+input[type="color"],
+select {
+    width: calc(100% - 17.5px);
+    padding: 20px;
+    margin: 15px;
+    border: 1px solid #24063d; 
+    border-radius: 5px;
+    font-size: 17px;
+    color: #333;
+    background-color: #9ba2be; 
+    box-sizing: border-box;
+}
+
+input[type="number"]:focus,
+input[type="color"]:focus,
+select:focus {
+    outline: none;
+    border-color: #66afe9; 
+}
+        
+    </style>
+</head>
+<body>
+    <div id="styl">
+    <h1>Mini Word Editor</h1>
+    <div style=" height: 80px;"></div>
+    <div id="txt" contenteditable="true" ></div>
+    <div style=" height: 30px;"></div>
+    <input type="number" id="nb" placeholder="Taille">
+    <input type="color" id="cl" placeholder="Couleur" >
+    <select id="police" placeholder="Police">
+        
+        <option value="Cambria">Cambria</option>
+        <option value="Calibri">Calibri</option>
+        <option value="Arial">Arial</option>
+        <option value="Verdana">Verdana</option>
+    </select>
+</div>
+
+    <script>
+        let txt = document.getElementById("txt");
+        let nb = document.getElementById("nb");
+        let cl = document.getElementById("cl");
+        let police = document.getElementById("police");
+
+        nb.addEventListener("input", nbr);
+        cl.addEventListener("input", colr);
+        police.addEventListener("change", polc);
+
+        function nbr() {
+            txt.style.fontSize = nb.value + "px";
+        }
+
+        function colr() {
+            txt.style.color = cl.value;
+        }
+
+        function polc() {
+            txt.style.fontFamily = police.value;
+        }
+    </script>
+</body>
+</html>
